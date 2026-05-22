@@ -1228,7 +1228,7 @@ $.summernote.pluginEvents.enter = function (event, editor, layoutInfo) {
 
     if (last === node && !dom.isBR(node)) {
         node = r.insertNode(br, true);
-        if (isFormatNode(last.firstChild) && $(last).closest(options.styleTags.join(',')).length) {
+        if (last.firstChild && isFormatNode(last.firstChild) && $(last).closest(options.styleTags.join(',')).length) {
             dom.moveContent(last.firstChild, last);
             last.removeChild(last.firstChild);
         }
